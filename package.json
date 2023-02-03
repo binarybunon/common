@@ -7,7 +7,7 @@
     "clean": "npx rimraf build",
     "build": "npm run clean && tsc",
     "dev": "ts-node-dev ./src/index.ts",
-    "pub": "git add . && git commit -m \"Updates\" "
+    "pub": "git add . && git commit -m \"Updates\" && npm version patch && npm publish"
   },
   "keywords": [],
   "author": "",
