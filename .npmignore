@@ -1,4 +1,11 @@
+# Rules from: C:\Users\EC\Desktop\projects\common\.gitignore
 **node_modules
 yarn.lock
 package-lock.json
+.npmignore
+
+# npmignore - content above this line is automatically generated and modifications may be omitted
+# see npmjs.com/npmignore for more details.
 src/
+gitignore/
+tsconfig.json
