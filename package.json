@@ -1,13 +1,13 @@
 {
   "name": "@binarybunon/common",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "index.js",
   "scripts": {
     "clean": "npx rimraf build",
     "build": "npm run clean && tsc",
-    "dev":"ts-node-dev ./src/index.ts",
-    "pub":"git add . && git commit -m \"Updates\" "
+    "dev": "ts-node-dev ./src/index.ts",
+    "pub": "git add . && git commit -m \"Updates\" "
   },
   "keywords": [],
   "author": "",
