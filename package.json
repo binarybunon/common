@@ -4,20 +4,26 @@
   "description": "",
   "main": "./build/index.js",
   "types": "./build/index.d.ts",
-  "files": [
-    "./build/*"
-  ],
   "scripts": {
     "clean": "npx rimraf build",
     "build": "npm run clean && tsc",
     "dev": "ts-node-dev ./src/index.ts",
+    "prepack": "npmignore --auto",
     "pub": "git add . && git commit -m \"Updates\" && npm version patch && npm publish"
+  },
+  "publishConfig": {
+    "ignore": [
+      "src/",
+      "gitignore/",
+      "tsconfig.json"
+    ]
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "del-cli": "^5.0.0",
+    "npmignore": "^0.3.0",
     "rimraf": "^4.1.2",
     "ts-node-dev": "^2.0.0",
     "typescript": "^4.9.5"
