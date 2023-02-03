@@ -22,3 +22,11 @@ const _date = basicFormat(new Date()); // 03/02/2023
 console.log(_date);
 
 ```
+
+For more information on how to use the package and its features, please refer to the documentation.
+
+Contributing
+We welcome contributions to the project. If you would like to contribute, please fork the repository and submit a pull request.
+
+License
+The package is available under the MIT License.
