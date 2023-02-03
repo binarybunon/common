@@ -4,6 +4,9 @@
   "description": "",
   "main": "./build/index.js",
   "types": "./build/index.d.ts",
+  "files": [
+    "./build/**/*"
+  ],
   "scripts": {
     "clean": "npx rimraf build",
     "build": "npm run clean && tsc",
