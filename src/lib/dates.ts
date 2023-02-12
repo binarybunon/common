@@ -15,3 +15,21 @@ export function basicFormat(date:Date):string {
   const _ = String(moment(date).format('L')).split('/');
   return `${_[1]}/${_[0]}/${_[2]}`;
 }
+
+
+// date range build for mongodb date range query
+export function dateRangeBuild(startDate:number, endDate:number):object{
+  const _d_start = new Date(startDate)
+    .toLocaleDateString(`fr-CA`)
+    .split("/")
+    .join("-");
+  const _d_end = new Date(endDate)
+    .toLocaleDateString(`fr-CA`)
+    .split("/")
+    .join("-");
+
+  return {
+    start: new Date(`${_d_start}T00:00:00.00Z`),
+    end: new Date(`${_d_end}T23:59:59.999Z`),
+  };
+}

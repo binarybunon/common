@@ -3,7 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.basicFormat = exports.DateStringMonthYear = void 0;
+exports.dateRangeBuild = exports.basicFormat = exports.DateStringMonthYear = void 0;
 const moment_1 = __importDefault(require("moment"));
 // Date String Like (3 Feb, 2023)
 function DateStringMonthYear(date) {
@@ -22,3 +22,19 @@ function basicFormat(date) {
     return `${_[1]}/${_[0]}/${_[2]}`;
 }
 exports.basicFormat = basicFormat;
+// date range build for mongodb date range query
+function dateRangeBuild(startDate, endDate) {
+    const _d_start = new Date(startDate)
+        .toLocaleDateString(`fr-CA`)
+        .split("/")
+        .join("-");
+    const _d_end = new Date(endDate)
+        .toLocaleDateString(`fr-CA`)
+        .split("/")
+        .join("-");
+    return {
+        start: new Date(`${_d_start}T00:00:00.00Z`),
+        end: new Date(`${_d_end}T23:59:59.999Z`),
+    };
+}
+exports.dateRangeBuild = dateRangeBuild;
