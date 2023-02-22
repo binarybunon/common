@@ -16,3 +16,9 @@ var __exportStar = (this && this.__exportStar) || function(m, exports) {
 Object.defineProperty(exports, "__esModule", { value: true });
 __exportStar(require("./lib/dates"), exports);
 __exportStar(require("./lib/str"), exports);
+// events
+__exportStar(require("./events/base-listener"), exports);
+__exportStar(require("./events/base-publisher"), exports);
+__exportStar(require("./events/subjects"), exports);
+__exportStar(require("./events/ticket-created-event"), exports);
+__exportStar(require("./events/ticket-updated-event"), exports);
