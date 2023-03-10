@@ -5,5 +5,5 @@ interface DateRange {
     end: Date;
 }
 export declare function dateRangeBuild(startDate: number, endDate: number): DateRange;
-export declare function DateRangeToArray(start: Date, end: Date): Promise<unknown>;
+export declare function DateRangeToArray(start: Date, end: Date): Promise<any>;
 export {};

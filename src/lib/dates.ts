@@ -40,7 +40,7 @@ export function dateRangeBuild(startDate: number, endDate: number): DateRange {
 
 
 // This Function is For Date Range Build
-export function DateRangeToArray(start:Date, end:Date){
+export function DateRangeToArray(start:Date, end:Date):Promise<any> {
   return new Promise((resolve, reject) => {
    let dates = [];
    // loop two dates
