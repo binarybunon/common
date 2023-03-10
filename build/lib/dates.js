@@ -3,7 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.dateRangeBuild = exports.basicFormat = exports.DateStringMonthYear = void 0;
+exports.DateRangeToArray = exports.dateRangeBuild = exports.basicFormat = exports.DateStringMonthYear = void 0;
 const moment_1 = __importDefault(require("moment"));
 // Date String Like (3 Feb, 2023)
 function DateStringMonthYear(date) {
@@ -38,3 +38,17 @@ function dateRangeBuild(startDate, endDate) {
     };
 }
 exports.dateRangeBuild = dateRangeBuild;
+// This Function is For Date Range Build
+function DateRangeToArray(start, end) {
+    return new Promise((resolve, reject) => {
+        let dates = [];
+        // loop two dates
+        var a = (0, moment_1.default)(start);
+        var b = (0, moment_1.default)(end);
+        for (var m = (0, moment_1.default)(a); m.isBefore(b); m.add(1, 'days')) {
+            dates.push(String(m.format('L')));
+        }
+        resolve({ dates });
+    });
+}
+exports.DateRangeToArray = DateRangeToArray;

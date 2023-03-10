@@ -35,7 +35,7 @@ export function dateRangeBuild(startDate: number, endDate: number): object {
 }
 
 
-
+// This Function is For Date Range Build
 export function DateRangeToArray(start:Date, end:Date){
   return new Promise((resolve, reject) => {
    let dates = [];
