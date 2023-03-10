@@ -22,7 +22,6 @@ function basicFormat(date) {
     return `${_[1]}/${_[0]}/${_[2]}`;
 }
 exports.basicFormat = basicFormat;
-// date range build for mongodb date range query
 function dateRangeBuild(startDate, endDate) {
     const _d_start = new Date(startDate)
         .toLocaleDateString(`fr-CA`)
