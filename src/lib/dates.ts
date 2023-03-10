@@ -18,7 +18,11 @@ export function basicFormat(date: Date): string {
 
 
 // date range build for mongodb date range query
-export function dateRangeBuild(startDate: number, endDate: number): object {
+interface DateRange{
+  start:Date,
+  end:Date
+}
+export function dateRangeBuild(startDate: number, endDate: number): DateRange {
   const _d_start = new Date(startDate)
     .toLocaleDateString(`fr-CA`)
     .split("/")
