@@ -17,9 +17,7 @@ class Listener {
     listen() {
         const subscription = this.client.subscribe(this.subject, this.queueGroupName, this.subscriptionOptions());
         subscription.on('message', (msg) => {
-            console.log(`
-        [+][Event] ${this.subject}
-      `);
+            console.log(`[+][Event] ${this.subject}`);
             const parsedData = this.parseMessage(msg);
             this.onMessage(parsedData, msg);
         });
